@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Microblog</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <p>{{ message }}</p>
+    {% block content %}
+    Main page
+    {% endblock %}
+    {% if posts %}
+    <ul>
+        {# Comment #}
+    {% for post in posts %}
+        <li><b>{{ post.1 }} : </b> {{ post.2 }}</li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    <p>There is no posts</p>
+    {% endif %}
+    <a href="/add">Add</a>
+    {% include 'copy.html' %}
+</body>
+</html>
