@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+    {% for contact in object_list %}
+        <li>{{contact.name}} - {{contact.phone}}</li>
+    {% endfor %}
+    </ul>
+{% if page_obj.has_previous %}
+    <a href="/view?page={{ page_obj.previous_page_number }}">previous</a>
+{% endif %}
+<span class="page-current">
+    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+</span>
+{% if page_obj.has_next %}
+    <a href="/view?page={{ page_obj.next_page_number }}">next</a>
+{% endif %}
+</body>
+</html>

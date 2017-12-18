@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+    <head>
+        <title>My Bookmarks</title>
+    </head>
+    <body>
+        <h1>My Bookmarks</h1>
+        {% block content %}
+        <p style='color:green'>{{message}}</p>
+        <a href='/add'>Add</a>
+        <ul>
+        {% for link in links %}
+            <li><a href='{{link}}'>{{link}}</a></li>
+        {% endfor %}
+        </ul>
+        {% endblock %}
+    </body>
+</html>
